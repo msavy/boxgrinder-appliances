@@ -1,0 +1,3 @@
+During local repository testing the repo is expected at file:///var/repo/. Place ephemeral-repo-test-x.x.tar.gz into rpmbuild/SOURCES and then run rpmbuild -ba localrepo.spec. Depending on your rpmbuild configuration you may need to move the built RPMS from ~/rpmbuild/RPMS to /var/repo/RPMS. Then simply run the createrepo command on /var/repo/RPMS/noarch/. 
+
+This will probably form part of an automated system in the near future and require no manual intervention.

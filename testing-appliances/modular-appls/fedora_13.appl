@@ -1,4 +1,4 @@
-name: fedora 13
+name: fedora-13
 summary: fedora 13 test
 version: 0.1
 release: 1
@@ -7,6 +7,10 @@ os:
   version: 13
 appliances:
   - _test_base
+#HACK - CI doesn't have symlink/F13 specific URI, so we can override it here for now to F14 manually
+repos:
+  - name: "Boxgrinder-Continuous-Integration-noarch"
+    baseurl: http://repo.ci.boxgrinder.org/#OS_NAME#/14/RPMS/
 post:
   base:
     - "/bin/echo 'true' > /fedora-13-boxgrinder-test"

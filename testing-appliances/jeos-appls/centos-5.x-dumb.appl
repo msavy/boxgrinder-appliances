@@ -1,0 +1,21 @@
+name: centos-5.x-dumb-test
+summary: Centos 5.5 basic verification of extremely simple appl
+os:
+  name: centos
+  version: 5
+hardware:
+  partitions:
+    "/":
+      size: 3
+packages:
+  - @base
+  - @core	
+post:
+  base:
+    - "echo 'worked!' > /base-boxgrinder-test"
+  ec2:
+    - "echo 'worked!' > /ec2-boxgrinder-test"
+  vmware:
+    - "echo 'worked!' > /vmware-boxgrinder-test"
+  virtualbox:
+    - "echo 'worked!' > /virtualbox-boxgrinder-test"

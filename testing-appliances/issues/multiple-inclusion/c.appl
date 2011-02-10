@@ -1,0 +1,13 @@
+name: c
+summary: c
+packages:
+  - emacs
+post:
+  base:
+    - "/bin/echo 'worked!' > /c-test-base-$RANDOM"
+  ec2:
+    - "/bin/echo 'worked!' > /c-test-ec2-$RANDOM"
+  vmware:
+    - "/bin/echo 'worked!' > /c-test-vmware-$RANDOM"
+  virtualbox:
+    - "/bin/echo 'worked!' > /c-test-virtualbox-$RANDOM"

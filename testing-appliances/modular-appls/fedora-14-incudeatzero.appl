@@ -1,0 +1,22 @@
+name: fedora-14-include-at-zero
+summary: Move inheritence up heirarchy - note all appl inclusion is at _depth zero_
+appliances:
+  - _hardware_cpus
+  - _hardware_memory
+  - _hardware_partitions_home
+  - _hardware_partitions_root
+  - _os_password
+  - _packages_groups_base
+  - _packages_groups_core
+  - _packages_squid
+  - _repos_boxgrinder_permanent_noarch
+  - _repos_testlocal_ephemeral_noarch
+post:
+  base:
+    - "/bin/echo 'true' > /fedora-14-include-at-zero-boxgrinder-test"
+  ec2:
+    - "/bin/echo 'true' > /fedora-14-include-at-zero-ec2-boxgrinder-test"
+  vmware:
+    - "/bin/echo 'true' > /fedora-14-include-at-zero-vmware-boxgrinder-test"
+  virtualbox:
+    - "/bin/echo 'true' > /fedora-14-include-at-zero-virtualbox-boxgrinder-test"

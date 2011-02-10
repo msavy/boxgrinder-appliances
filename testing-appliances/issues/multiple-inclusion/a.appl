@@ -1,0 +1,22 @@
+name: a
+summary: a
+os:
+  name: fedora
+  version: 14
+hardware:
+  partitions:
+    "/home":
+      size: 1
+appliances:
+  - b
+packages:
+  - @core
+post:
+  base:
+    - "/bin/echo 'worked!' > /a-test"
+  ec2:
+    - "/bin/echo 'worked!' > /a-test"
+  vmware:
+    - "/bin/echo 'worked!' > /a-test"
+  virtualbox:
+    - "/bin/echo 'worked!' > /a-test"

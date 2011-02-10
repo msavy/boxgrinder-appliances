@@ -1,0 +1,13 @@
+name: b
+summary: b
+packages:
+  - squid
+post:
+  base:
+    - "/bin/echo 'worked!' > /b-test"
+  ec2:
+    - "/bin/echo 'worked!' > /b-test"
+  vmware:
+    - "/bin/echo 'worked!' > /b-test"
+  virtualbox:
+    - "/bin/echo 'worked!' > /b-test"

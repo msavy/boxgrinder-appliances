@@ -1,0 +1,16 @@
+name: fedora 13
+summary: fedora 13 test
+os:
+  name: fedora
+  version: 13
+appliances:
+  - _test_base
+post:
+  base:
+    - "/bin/echo 'true' > /fedora-13-boxgrinder-test"
+  ec2:
+    - "/bin/echo 'true' > /fedora-13-ec2-boxgrinder-test"
+  vmware:
+    - "/bin/echo 'true' > /fedora-13-vmware-boxgrinder-test"
+  virtualbox:
+    - "/bin/echo 'true' > /fedora-13-virtualbox-boxgrinder-test"

@@ -1,7 +1,7 @@
 name: centos 5
 summary: centos 5 test
 version: 0.1
-release 1
+release: 1
 os:
   name: centos
   version: 5

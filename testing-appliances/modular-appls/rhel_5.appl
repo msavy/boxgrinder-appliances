@@ -1,10 +1,10 @@
 name: rhel 5
 summary: rhel 5 test
 os:
-  name: fedora
+  name: rhel
   version: 5
 appliances:
-- _test_base
+  - _test_base
 post:
   base:
     - "/bin/echo 'true' > /rhel-5-boxgrinder-test"

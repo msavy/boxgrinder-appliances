@@ -7,6 +7,10 @@ os:
   version: 5
 appliances:
   - _test_base
+#HACK - CI doesn't have symlink/centos specific URI, so we can override it here for now to rhel manually
+repos:
+  - name: "Boxgrinder-Continuous-Integration-noarch"
+    baseurl: http://repo.ci.boxgrinder.org/rhel/#OS_VERSION#/RPMS/
 post:
   base:
     - "/bin/echo 'true' > /centos-5-boxgrinder-test"

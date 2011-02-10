@@ -8,6 +8,7 @@ Packager: Marc Savy
 Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 BuildArch: noarch
+Group: other
 
 %description
 A test spec for use in verifying ephemeral repo functionality in BoxGrinder

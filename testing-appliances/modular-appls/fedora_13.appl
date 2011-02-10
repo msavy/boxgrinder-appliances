@@ -1,5 +1,7 @@
 name: fedora 13
 summary: fedora 13 test
+version: 0.1
+release 1
 os:
   name: fedora
   version: 13

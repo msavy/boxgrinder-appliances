@@ -1,5 +1,7 @@
 name: rhel 5
 summary: rhel 5 test
+version: 0.1
+release 1
 os:
   name: rhel
   version: 5

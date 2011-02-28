@@ -13,7 +13,9 @@ packages:
   - createrepo
   - git
   - rpmdevtools
+  - createrepo
   - guestfish
+  - rubygem-bundler
   - rubygem-boxgrinder-build
   - rubygem-boxgrinder-build-fedora-os-plugin
   - rubygem-boxgrinder-build-ec2-platform-plugin

@@ -1,0 +1,5 @@
+name: util-packages
+summary: Require some util packages for testing
+packages:
+  - git
+  - rubygem-boxgrinder-build

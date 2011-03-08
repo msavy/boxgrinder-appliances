@@ -9,6 +9,7 @@ appliances:
   - _packages_groups_base
   - _packages_groups_core
   - _packages_squid
+  - _packages_utils
   - _repos_boxgrinder_permanent_noarch
   - _repos_testlocal_ephemeral_noarch
 post:

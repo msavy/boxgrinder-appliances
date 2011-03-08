@@ -10,7 +10,7 @@ appliances:
 #HACK - CI doesn't have symlink/centos specific URI, so we can override it here for now to rhel manually
 repos:
   - name: "boxgrinder-ci-noarch"
-    baseurl: http://repo.ci.boxgrinder.org/#OS_NAME#/#OS_VERSION#/RPMS/
+    baseurl: http://repo.ci.boxgrinder.org/rhel/#OS_VERSION#/RPMS/
   - name: "boxgrinder-noarch"
     baseurl: http://repo.boxgrinder.org/boxgrinder/packages/rhel/#OS_VERSION#/RPMS/noarch/
   - name: "boxgrinder-#ARCH#"

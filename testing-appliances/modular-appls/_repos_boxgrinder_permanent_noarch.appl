@@ -1,7 +1,7 @@
 name: repos-boxgrinder-permanent-noarch
 summary: Add an external repository (BG-CI)
 repos:
-  - name: "Boxgrinder-Continuous-Integration-noarch"
+  - name: "boxgrinder-ci-noarch"
     baseurl: http://repo.ci.boxgrinder.org/#OS_NAME#/#OS_VERSION#/RPMS/
 post:
   base:

@@ -14,7 +14,7 @@ repos:
   - name: "boxgrinder-noarch"
     baseurl: http://repo.boxgrinder.org/boxgrinder/packages/rhel/#OS_VERSION#/RPMS/noarch/
   - name: "boxgrinder-#ARCH#"
-    baseurl=http://repo.boxgrinder.org/boxgrinder/packages/rhel/5/RPMS/#ARCH#/
+    baseurl: http://repo.boxgrinder.org/boxgrinder/packages/rhel/5/RPMS/#ARCH#/
 post:
   base:
     - "/bin/echo 'true' > /centos-5-boxgrinder-test"

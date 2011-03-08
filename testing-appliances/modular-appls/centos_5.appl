@@ -15,10 +15,12 @@ repos:
     baseurl: http://repo.boxgrinder.org/boxgrinder/packages/rhel/#OS_VERSION#/RPMS/noarch/
   - name: "boxgrinder-#ARCH#"
     baseurl: http://repo.boxgrinder.org/boxgrinder/packages/rhel/5/RPMS/#ARCH#/
+  - name: epel
+    mirrorlist: http://mirrors.fedoraproject.org/mirrorlist?repo=epel-#OS_VERSION#&arch=#ARCH#
+
 post:
   base:
     - "/bin/echo 'true' > /centos-5-boxgrinder-test"
-    - "rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/#ARCH#/epel-release-5-4.noarch.rpm"
   ec2:
     - "/bin/echo 'true' > /centos-5-ec2-boxgrinder-test"
   vmware:

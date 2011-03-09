@@ -1,0 +1,78 @@
+#Initial appliance kwalify schema for boxgrinder build
+#TODO: add more obscure fields, patterns where needed
+type: map
+mapping:
+  "name":
+    type: str
+    required: yes
+  "summary":
+    type: str
+    required: yes
+  "version":
+    type: int
+  "release":
+    type: int
+  "os":
+    type: map
+    mapping:
+      "name":
+         type: str
+      "version":
+         type: int
+  "hardware":
+    type: map
+    mapping:
+      "cpus":
+        type: int
+      "memory":
+        type: int
+      "partitions":
+        type: map
+        mapping:
+          "=":
+            type: map
+            mapping:             
+              "size":
+                type: int
+                required: yes
+  "appliances":
+    type: seq
+    sequence:
+      - type: str
+  "packages":
+    type: seq
+    sequence:
+      - type: str
+  "repos":
+    type: seq
+    sequence:
+      - type: map
+        mapping:
+          "name":
+            type: str
+            pattern: /[\S\w-]/
+            required: yes
+          "baseurl":
+            type: str #ideally we want xor, can be expressed via eval I think (e.g. baseurl xor mirrorlist)
+            pattern: /[\S\w-]/
+            required: yes
+          "mirrorlist":
+            type: str
+  "post":
+    type: map
+    mapping:
+      "=":
+        type: seq
+        sequence:
+          - type: str
+            
+
+          
+
+        
+    
+
+  
+          
+             
+            

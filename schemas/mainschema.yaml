@@ -29,20 +29,23 @@ mapping:
       "partitions":
         type: map
         mapping:
-          "=":
+          "=": #No way of providing validation regex for wildcard name unfortunately.
             type: map
             mapping:             
               "size":
                 type: int
                 required: yes
+                range: { min: 1 }
   "appliances":
     type: seq
     sequence:
       - type: str
+        pattern: /[^\/]/ #we dont support path resolution yet
   "packages":
     type: seq
     sequence:
       - type: str
+        pattern: /[\w\-+.]/ #fedora packaging standard http://bit.ly/h0JN9u (plus a few more, but disallow symbols/spaces)
   "repos":
     type: seq
     sequence:
@@ -50,14 +53,16 @@ mapping:
         mapping:
           "name":
             type: str
-            pattern: /[\S\w-]/
+            pattern: /[\w\-+.]/#allowing spaces tends to break things
             required: yes
           "baseurl":
             type: str #ideally we want xor, can be expressed via eval I think (e.g. baseurl xor mirrorlist)
-            pattern: /[\S\w-]/
-            required: yes
+            pattern: /^((http|ftp|file):)(\/\/([^\/?\#]*))?([^?\#]*)(\?([^\#]*))?(\#(.*))?/ #customised rfc3986 standard regexp for URIs
+            required: no #
           "mirrorlist":
             type: str
+            pattern: /^((http|ftp|file):)(\/\/([^\/?\#]*))?([^?\#]*)(\?([^\#]*))?(\#(.*))?/ #customised rfc3986 standard regexp for URIs
+            required: no #
   "post":
     type: map
     mapping:
@@ -65,14 +70,3 @@ mapping:
         type: seq
         sequence:
           - type: str
-            
-
-          
-
-        
-    
-
-  
-          
-             
-            

@@ -13,16 +13,10 @@ packages:
   - createrepo
   - git
   - rpmdevtools
+  - createrepo
   - guestfish
+  - rubygem-bundler
   - rubygem-boxgrinder-build
-  - rubygem-boxgrinder-build-fedora-os-plugin
-  - rubygem-boxgrinder-build-ec2-platform-plugin
-  - rubygem-boxgrinder-build-vmware-platform-plugin
-  - rubygem-boxgrinder-build-s3-delivery-plugin
-  - rubygem-boxgrinder-build-sftp-delivery-plugin
-  - rubygem-boxgrinder-build-local-delivery-plugin
-  - rubygem-boxgrinder-build-ebs-delivery-plugin
 post:
   base:
-    - "/bin/echo 'yum -y remove rubygem-boxgrinder-*' >> /etc/rc.local"
-    - "/bin/echo 'yum -y install rubygem-boxgrinder-*' >> /etc/rc.local"
+    - "/bin/echo 'yum -y update rubygem-boxgrinder-core rubygem-boxgrinder-build' >> /etc/rc.local"

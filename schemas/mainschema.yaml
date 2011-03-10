@@ -72,12 +72,14 @@ mapping:
             type: str #ideally we want xor, can be expressed via eval I think (e.g. baseurl xor mirrorlist)
             pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
             length: { min: 1 }
-            required: yes
+            # required: yes
           "mirrorlist":
             type: str
             pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
             length: { min: 1 }
             # required: no
+          "ephemeral":
+            type: bool
   "post":
     type: map
     mapping:

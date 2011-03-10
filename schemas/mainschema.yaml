@@ -5,27 +5,36 @@ mapping:
   "name":
     type: str
     required: yes
+    length: { min: 1 }
   "summary":
     type: str
     required: yes
+    length: { min: 1 }
   "version":
     type: int
+    range: { min: 0 }
   "release":
     type: int
+    range: { min: 0 }
   "os":
     type: map
     mapping:
       "name":
          type: str
+         required: yes
+         length: { min: 1 }
       "version":
-         type: int
+         type: int #required?
+         range: { min: 0 }
   "hardware":
     type: map
     mapping:
       "cpus":
         type: int
+        range: { min: 1, max: 4 } #do we want to put a max, given future hw trends?
       "memory":
         type: int
+        range: { min: 1 }
       "partitions":
         type: map
         mapping:
@@ -34,18 +43,21 @@ mapping:
             mapping:             
               "size":
                 type: int
-                required: yes
                 range: { min: 1 }
   "appliances":
     type: seq
     sequence:
       - type: str
-        pattern: /[^\/]/ #we dont support path resolution yet
+        pattern: /^[^\/]+$/ #we dont support path resolution yet
+        length: { min: 1 }
+        required: yes
   "packages":
     type: seq
     sequence:
       - type: str
-        pattern: /[\w\-+.]/ #fedora packaging standard http://bit.ly/h0JN9u (plus a few more, but disallow symbols/spaces)
+        pattern: /^[\w\-+.]+$/ #fedora packaging standard http://bit.ly/h0JN9u (plus a few more, but disallow symbols/spaces)
+        length: { min: 1 }
+        required: yes
   "repos":
     type: seq
     sequence:
@@ -53,16 +65,19 @@ mapping:
         mapping:
           "name":
             type: str
-            pattern: /[\w\-+.]/#allowing spaces tends to break things
+            pattern: /^[\w\-+.]+$/ #allowing spaces tends to break things
+            length: { min: 1 }
             required: yes
           "baseurl":
             type: str #ideally we want xor, can be expressed via eval I think (e.g. baseurl xor mirrorlist)
-            pattern: /^((http|ftp|file):)(\/\/([^\/?\#]*))?([^?\#]*)(\?([^\#]*))?(\#(.*))?/ #customised rfc3986 standard regexp for URIs
-            required: no #
+            pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
+            length: { min: 1 }
+            required: yes
           "mirrorlist":
             type: str
-            pattern: /^((http|ftp|file):)(\/\/([^\/?\#]*))?([^?\#]*)(\?([^\#]*))?(\#(.*))?/ #customised rfc3986 standard regexp for URIs
-            required: no #
+            pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
+            length: { min: 1 }
+            # required: no
   "post":
     type: map
     mapping:
@@ -70,3 +85,5 @@ mapping:
         type: seq
         sequence:
           - type: str
+            length: { min: 1 }
+            required: yes

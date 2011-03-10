@@ -1,0 +1,36 @@
+name: ""
+summary: ""
+version: -1
+release: -2
+hardware:
+  cpus: 0
+  memory: 0
+  partitions:
+    "/":
+      size: 0
+    "/home":
+      size: -1
+appliances:
+  - /cannot/do/this
+  - #wrong
+  - "" #wrong
+  - " "#technically ok
+  - this$is%fine£though
+packages:
+  - this-is-fine
+  - good/bad/u g l y
+  - $%^&*dontlet$$£this%£"$work
+  - #blank is bad
+  - "" #empty string is invalid too
+  - " "#no spaces allowed
+repos:
+  - #finish me
+post:
+  base:
+    - #wrong
+    - "" #wrong
+    - " " #wrong
+    - "this>is<fine >> << $() || && == ++ --"
+  fred:
+    - "shred"
+

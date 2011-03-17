@@ -1,0 +1,32 @@
+name: 0.8.x test appliance
+summary: appliance to test 0.8.x schema 
+version: 0
+release: 0
+os:
+  name: fedora
+  version: 15
+hardware:
+  cpus: 4
+  memory: 4
+  partitions:
+    "/":
+      size: 4
+      type: ext4
+appliances:
+  - include.appl
+  - include.yaml
+packages:
+  includes: 
+    - @base
+    - emacs
+  excludes:
+    - this-does-nothing
+repos:
+  - name: boxgrinder-ci-repo
+    baseurl: http://repo.ci.boxgrinder.org/fedora/15/RPMS/
+    ephemeral: true
+post:
+  base:
+    - "/bin/echo 'Hello, World!' > hello-world"
+  vmware:
+    - "/bin/echo 'Hello, World!' > hello-world-vmware" 

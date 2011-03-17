@@ -10,6 +10,7 @@ hardware:
       size: 0
     "/home":
       size: -1
+      type: ABC123 #no such type 
 appliances:
   - /cannot/do/this
   - #wrong
@@ -24,13 +25,16 @@ packages:
   - "" #empty string is invalid too
   - " "#no spaces allowed
 repos:
-  - #finish me
+  - name: "" # wrong
+  - name: " "# no spaces
+  - name: "blah"
+    baseurl: sftp://example.com #no sftp support
+    mirrorlist: http:// this is not ok .\/\/ #invalid uri
 post:
   base:
     - #wrong
     - "" #wrong
     - " " #wrong
     - "this>is<fine >> << $() || && == ++ --"
-  fred:
-    - "shred"
-
+  fred: #ok
+    - "shred" #ok

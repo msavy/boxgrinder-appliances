@@ -4,12 +4,12 @@ type: map
 mapping:
   "name":
     type: str
-    required: yes
     length: { min: 1 }
+    required: yes
   "summary":
     type: str
-    required: yes
     length: { min: 1 }
+    required: yes
   "version":
     type: int
     range: { min: 0 }
@@ -21,24 +21,24 @@ mapping:
     mapping:
       "name":
          type: str
-         required: yes
          length: { min: 1 }
+         required: yes
       "version":
-         type: int #required?
+         type: int
          range: { min: 0 }
   "hardware":
     type: map
     mapping:
       "cpus":
         type: int
-        range: { min: 1, max: 4 } #do we want to put a max, given future hw trends?
+        range: { min: 1, max: 4 }
       "memory":
         type: int
         range: { min: 1 }
       "partitions":
         type: map
         mapping:
-          "=": #No way of providing validation regex for wildcard name unfortunately.
+          "=": #No way of providing validation regex for wildcard name.
             type: map
             mapping:             
               "size":
@@ -48,16 +48,14 @@ mapping:
     type: seq
     sequence:
       - type: str
-        pattern: /^[^\/]+$/ #we dont support path resolution yet
+        pattern: /^[^\/]+$/ #dont support path resolution yet
         length: { min: 1 }
-        required: yes
   "packages":
     type: seq
     sequence:
       - type: str
-        pattern: /^[\w\-+.]+$/ #fedora packaging standard http://bit.ly/h0JN9u (plus a few more, but disallow symbols/spaces)
+        pattern: /^[\w\-+.]+$/ #fedora packaging standard http://bit.ly/h0JN9u (plus a few more, disallow symbols/spaces)
         length: { min: 1 }
-        required: yes
   "repos":
     type: seq
     sequence:
@@ -65,21 +63,14 @@ mapping:
         mapping:
           "name":
             type: str
-            pattern: /^[\w\-+.]+$/ #allowing spaces tends to break things
+            pattern: /^[\w\-+.]+$/
             length: { min: 1 }
             required: yes
-          "baseurl":
-            type: str #ideally we want xor, can be expressed via eval I think (e.g. baseurl xor mirrorlist)
-            pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
-            length: { min: 1 }
-            # required: yes
-          "mirrorlist":
+          "baseurl": &pkg-mirror
             type: str
             pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
             length: { min: 1 }
-            # required: no
-          "ephemeral":
-            type: bool
+          "mirrorlist": *pkg-mirror
   "post":
     type: map
     mapping:
@@ -88,4 +79,3 @@ mapping:
         sequence:
           - type: str
             length: { min: 1 }
-            required: yes

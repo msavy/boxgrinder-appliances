@@ -76,7 +76,7 @@ mapping:
             required: yes
           "baseurl": &pkg-mirror
             type: str
-            pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
+            pattern: /(^((http|ftp):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$|^file:\/\/.+$)/ #customised rfc3986 standard regexp for URIs
           "mirrorlist": *pkg-mirror
           "ephemeral": 
             type: bool

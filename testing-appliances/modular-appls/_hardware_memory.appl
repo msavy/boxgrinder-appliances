@@ -1,8 +1,7 @@
 name: hardware-memory
 describe: Assign memory
 hardware:
-  memory:
-    2048
+  memory: 2048
 post:
   base:
     - "/bin/echo 'true' > /hardware-memory-boxgrinder-test"

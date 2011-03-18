@@ -10,10 +10,10 @@ mapping:
     length: { min: 1 }
     required: yes
   "version":
-    type: int
+    type: number
     range: { min: 0 }
   "release":
-    type: int
+    type: number
     range: { min: 0 }
   "os":
     type: map
@@ -23,8 +23,9 @@ mapping:
         length: { min: 1 }
         required: yes
       "version":
-        type: int
+        type: number
         range: { min: 0 }
+        required: yes
       "password":
         type: str	  
   "hardware":
@@ -43,7 +44,7 @@ mapping:
             type: map
             mapping:             
               "size":
-                type: int
+                type: number
                 range: { min: 1 }
               "type":
                 type: str
@@ -75,7 +76,7 @@ mapping:
             pattern: /^((http|ftp|file):)(\/\/([^\/?\043]*))?([^?\043]*)(\?([^\043]*))?(\043(.*))?$/ #customised rfc3986 standard regexp for URIs
           "mirrorlist": *pkg-mirror
           "ephemeral":
-            type: bool
+            type: bool    
   "post":
     type: map
     mapping:
@@ -84,3 +85,9 @@ mapping:
         sequence:
           - type: str
             length: { min: 1 }
+  "variables":
+    type: map
+    mapping:
+      "=": # wibble: value
+        type: str
+        length: { min: 1 }

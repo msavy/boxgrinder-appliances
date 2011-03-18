@@ -18,11 +18,13 @@ appliances:
 packages:
   - squid
   - rubygem-boxgrinder-build
-  - "9" #valid name we're expressing it as a string explicitly      
+  - "9" #valid name - we're expressing it as a string explicitly
 repos:
   - name: boxgrinder-ci-repo
     baseurl: http://repo.ci.boxgrinder.org/fedora/15/RPMS/
     ephemeral: true
+  - name: test
+    baseurl: "http://example.com/repo/#BASE_ARCH#/"
 post:
   base:
     - "/bin/echo 'Hello, World!' > hello-world"

@@ -19,12 +19,14 @@ mapping:
     type: map
     mapping:
       "name":
-         type: str
-         length: { min: 1 }
-         required: yes
+        type: str
+        length: { min: 1 }
+        required: yes
       "version":
-         type: int
-         range: { min: 0 }
+        type: int
+        range: { min: 0 }
+      "password":
+        type: str		  
   "hardware":
     type: map
     mapping:

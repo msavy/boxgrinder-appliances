@@ -5,6 +5,7 @@ release: 0
 os:
   name: fedora
   version: 15
+  password: boxgrinder-ftw
 hardware:
   cpus: 4
   memory: 4

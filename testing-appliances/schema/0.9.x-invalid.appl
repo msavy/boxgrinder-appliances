@@ -25,9 +25,9 @@ packages:
   - "" #empty string is invalid too
   - " "#no spaces allowed
 repos:
-  - name: "" # wrong
-  - name: " "# no spaces
-  - name: "blah"
+  - name: "" # wrong and missing baseurl/mirrorlist
+  - name: " "# no spaces and missing baseurl/mirrorlist
+  - name: "blah" # repo has baseurl AND mirrorlist which is wrong
     baseurl: sftp://example.com #no sftp support
     mirrorlist: http:// this is not ok .\/\/ #invalid uri
 post:

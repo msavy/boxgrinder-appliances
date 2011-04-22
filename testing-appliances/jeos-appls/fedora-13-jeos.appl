@@ -1,15 +1,15 @@
-name: centos-5.x-dumb-test
-summary: Centos 5.5 basic verification of extremely simple appl
+name: f13-jeos
+summary: F13 basic verification of extremely simple appl
 os:
-  name: centos
-  version: 5
+  name: fedora
+  version: 13
 hardware:
   partitions:
     "/":
       size: 3
 packages:
-  - @base
-  - @core	
+    - @base
+    - @core	
 post:
   base:
     - "echo 'worked!' > /base-boxgrinder-test"

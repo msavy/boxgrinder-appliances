@@ -24,6 +24,8 @@ repos:
     ephemeral: true
   - name: test
     baseurl: "http://example.com/repo/#BASE_ARCH#/"
+  - name: mirrorlist
+    mirrorlist: "http://example.com/"
 variables:
   my_var: "bg rocks!"
   something: "other"

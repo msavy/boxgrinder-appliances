@@ -1,4 +1,4 @@
-name: rhel-5-dumb
+name: rhel-5-jeos
 summary: rhel 5 basic verification of extremely simple appl
 os:
   name: rhel

@@ -1,16 +1,15 @@
-name: Rawhide-dumb-test
-summary: Rawhide basic verification of extremely simple appl
+name: f14-jeos
+summary: F14 basic verification of extremely simple appl
 os:
   name: fedora
-  version: rawhide
+  version: 14
 hardware:
   partitions:
     "/":
       size: 3
 packages:
-  includes:
-    - @base
-    - @core
+  - @base
+  - @core
 post:
   base:
     - "echo 'worked!' > /base-boxgrinder-test"

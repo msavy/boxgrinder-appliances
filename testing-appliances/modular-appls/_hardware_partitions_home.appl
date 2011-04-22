@@ -1,5 +1,5 @@
 name: hardware-partitions-home
-describe: create 2GB home partition
+summary: create 2GB home partition
 hardware:
   partitions:
     "/home":

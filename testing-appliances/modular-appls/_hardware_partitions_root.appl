@@ -1,5 +1,5 @@
 name: hardware-partitions-root
-describe: set 2GB root partition
+summary: set 2GB root partition
 hardware:
   partitions:
     "/":

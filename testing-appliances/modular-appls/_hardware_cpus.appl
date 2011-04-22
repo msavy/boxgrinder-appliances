@@ -1,5 +1,5 @@
 name: hardware-cpus
-describe: Assign number of CPUs
+summary: Assign number of CPUs
 hardware:
   cpus: 2
 post:

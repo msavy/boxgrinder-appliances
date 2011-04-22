@@ -1,5 +1,5 @@
 name: hardware-memory
-describe: Assign memory
+summary: Assign memory
 hardware:
   memory: 2048
 post:

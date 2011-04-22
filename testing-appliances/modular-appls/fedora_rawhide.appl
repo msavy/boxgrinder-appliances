@@ -1,7 +1,7 @@
 name: fedora-rawhide
 summary: fedora rawhide test
-version: 0.1
-release: 1
+version: 1
+release: 2
 os:
   name: fedora
   version: rawhide

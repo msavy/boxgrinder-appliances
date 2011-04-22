@@ -1,4 +1,4 @@
-name: fedora-15
+name: f-15-jeos
 summary: fedora-15 basic verification of extremely simple appl
 os:
   name: fedora

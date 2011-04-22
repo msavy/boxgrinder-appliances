@@ -1,0 +1,22 @@
+name: fedora-15
+summary: fedora-15 basic verification of extremely simple appl
+os:
+  name: fedora
+  version: 15
+hardware:
+  partitions:
+    "/":
+      size: 3
+packages:
+  includes:
+    - @base
+    - @core
+post:
+  base:
+    - "echo 'worked!' > /base-boxgrinder-test"
+  ec2:
+    - "echo 'worked!' > /ec2-boxgrinder-test"
+  vmware:
+    - "echo 'worked!' > /vmware-boxgrinder-test"
+  virtualbox:
+    - "echo 'worked!' > /virtualbox-boxgrinder-test"

@@ -8,8 +8,8 @@ hardware:
     "/":
       size: 3
 packages:
-    - @base
-    - @core	
+  - @base
+  - @core	
 post:
   base:
     - "echo 'worked!' > /base-boxgrinder-test"

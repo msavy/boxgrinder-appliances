@@ -4,7 +4,7 @@ packages:
   - ephemeral-repo-test-0.1-1
 repos:
   - name: "BoxGrinder-Test-ephemeral-localrepo-noarch"
-    baseurl: file:///var/repo/RPMS/noarch/
+    baseurl: file:///tmp/boxgrinder-repo/
     ephemeral: true
 post:
   base:

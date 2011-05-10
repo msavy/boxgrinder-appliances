@@ -1,12 +1,22 @@
-name: rhel 5
+name: rhel-5
 summary: rhel 5 test
 version: 1
-release 2
+release: 2
 os:
   name: rhel
   version: 5
 appliances:
   - _test_base
+#HACK - CI doesn't have symlink/centos specific URI, so we can override it here for now to rhel manually
+repos:
+  - name: "boxgrinder-ci-noarch"
+    baseurl: "http://repo.ci.boxgrinder.org/rhel/#OS_VERSION#/RPMS/"
+  - name: "boxgrinder-noarch"
+    baseurl: "http://repo.boxgrinder.org/boxgrinder/packages/rhel/#OS_VERSION#/RPMS/noarch/"
+  - name: "boxgrinder-#BASE_ARCH#"
+    baseurl: "http://repo.boxgrinder.org/boxgrinder/packages/rhel/5/RPMS/#BASE_ARCH#/"
+  - name: epel
+    mirrorlist: "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-#OS_VERSION#&arch=#BASE_ARCH#"
 post:
   base:
     - "/bin/echo 'true' > /rhel-5-boxgrinder-test"

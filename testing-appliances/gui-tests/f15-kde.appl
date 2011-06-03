@@ -1,5 +1,5 @@
-name: f15-gnome
-summary: fedora-15 with GNOME                               
+name: f15-kde
+summary: fedora-15 with KDE                               
 os:
   name: fedora
   version: 15
@@ -10,5 +10,5 @@ hardware:
 appliances:
   - _gui_base_systemd
 packages:
-  - @gnome-desktop
-  - @critical-path-gnome
+  - @kde_desktop
+  - @critical-path-kde

@@ -1,0 +1,17 @@
+name: f15-gnome
+summary: fedora-15 with GNOME                               
+os:
+  name: fedora
+  version: 15
+hardware:
+  partitions:
+    "/":
+      size: 8
+packages:
+  - @base
+  - @core
+  - @gnome-desktop
+  - @critical-path-gnome
+post:
+  base:
+    - "ln -s --force /lib/systemd/system/graphical.target /etc/systemd/system/default.target"

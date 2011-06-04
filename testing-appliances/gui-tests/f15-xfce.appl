@@ -1,6 +1,3 @@
-#Warning, this **does not work properly yet** due to some dependency issues (not BoxGrinder Build related). 
-#I have determined that some necessary x-org packages needed aren't being installed.  However, even with these it isn't
-#picking up the display quite right, and is terminating. So a bit more detective work is required. 
 name: f15-xfce
 summary: fedora-15 with XFCE                               
 os:
@@ -13,5 +10,5 @@ hardware:
 appliances:
   - _gui_base_systemd
 packages:
-  - @xfce_desktop
+  - @xfce-desktop
   - @critical-path-xfce

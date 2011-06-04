@@ -10,5 +10,5 @@ hardware:
 appliances:
   - _gui_base_systemd
 packages:
-  - @kde_desktop
+  - @kde-desktop
   - @critical-path-kde

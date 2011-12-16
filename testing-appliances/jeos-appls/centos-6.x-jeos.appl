@@ -1,17 +1,15 @@
-name: f15-jeos
-summary: fedora-15 basic verification of extremely simple appl
+name: centos-6.x-jeos
+summary: Centos 6 basic verification of extremely simple appl
 os:
-  name: 'fedora'
-  version: 15
+  name: centos
+  version: 6
 hardware:
   partitions:
     "/":
       size: 3
-    "swap":
-      size: 2
 packages:
   - @base
-  - @core
+  - @core	
 post:
   base:
     - "echo 'worked!' > /base-boxgrinder-test"
